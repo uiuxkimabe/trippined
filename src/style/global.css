@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap");
+
+/*? global clearing */
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: var(--monserrat);
+}
+
+:root {
+  /* font family */
+  --monserrat: "Montserrat", sans-serif;
+  /* color */
+  --basic: #fff;
+  --dark: #070505;
+  --grey: #504848;
+  --fresh: #0d922e;
+}
+
+.container {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+}
+
+.row {
+  width: 100%;
+  height: 100%;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.active {
+  color: var(--fresh) !important;
+  font-weight: 600;
+}
+
+/* NAV */
+
+nav {
+  position: sticky;
+  top: 0;
+  background-color: var(--basic);
+}
+
+nav a {
+  display: inline-block;
+  padding: 1.5em 0;
+  color: var(--dark);
+}
+
+.navigator a {
+  margin: 0 1em;
+}
+
+.hamBtn {
+  background: none;
+  border: none;
+  display: none;
+}
+
+/* END NAV */
+
+/* MAIN */
+
+.welcome {
+  background-color: var(--basic);
+  text-align: center;
+}
+
+.welcome > .filter-btn {
+  padding: 1em 0;
+}
+
+.welcome > .filter-btn button {
+  padding: 0.8em 1.2em;
+  background: none;
+  border: none;
+  color: var(--grey);
+}
+
+main .row {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.rm-card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 1em;
+  color: var(--dark);
+}
+
+.rm-card .preview {
+  display: block;
+  height: 250px;
+  border: 1px solid var(--grey);
+  background-color: var(--grey);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.rm-card .caption {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+/* END MAIN */
+
+/* RESPONSIVE */
+/* DESKTOP VIEW */
+@media (max-width: 992px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* TABLET VIEW */
+@media (max-width: 768px) {
+  html {
+    font-size: 65%;
+  }
+
+  .navigator {
+    position: fixed;
+    top: 4em;
+    right: 2em;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--basic);
+    padding: 1em;
+  }
+
+  .hamBtn {
+    display: block;
+  }
+}
+
+/* SMARTPHONE VIEW */
+@media (max-width: 576px) {
+  html {
+    font-size: 60%;
+  }
+}
