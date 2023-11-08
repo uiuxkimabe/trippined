@@ -14,13 +14,48 @@ let displayPriceWe;
 
 // Villa A
 {
-  const villaA = new Price();
+  villaA = new Price();
   villaA.basicPrice = 1000000;
-  villaA.percentWd = 3;
-  villaA.percentWe = 3.3;
+  villaA.percentWd = 2;
+  villaA.percentWe = 2.3;
   displayPriceWd = villaA.weekDay();
   displayPriceWe = villaA.weekEnd();
   prWdA.innerHTML = displayPriceWd.toLocaleString("id-ID");
   prWeA.innerHTML = displayPriceWe.toLocaleString("id-ID");
-  console.table(displayPriceWd, displayPriceWe, prWdA);
+}
+
+// Villa B
+{
+  villaB = new Price();
+  villaB.basicPrice = 1500000;
+  villaB.percentWd = 2;
+  villaB.percentWe = 2.5;
+  displayPriceWd = villaB.weekDay();
+  displayPriceWe = villaB.weekEnd();
+  prWdB.innerHTML = displayPriceWd.toLocaleString("id-ID");
+  prWeB.innerHTML = displayPriceWe.toLocaleString("id-ID");
+}
+
+// Villa C
+{
+  villaC = new Price();
+  villaC.basicPrice = 1300000;
+  villaC.percentWd = 2;
+  villaC.percentWe = 2.5;
+  displayPriceWd = villaC.weekDay();
+  displayPriceWe = villaC.weekEnd();
+  prWdC.innerHTML = displayPriceWd.toLocaleString("id-ID");
+  prWeC.innerHTML = displayPriceWe.toLocaleString("id-ID");
+}
+
+// Villa D
+{
+  villaD = new Price();
+  villaD.basicPrice = 1200000;
+  villaD.percentWd = 2;
+  villaD.percentWe = 2.5;
+  displayPriceWd = villaD.weekDay();
+  displayPriceWe = villaD.weekEnd();
+  prWdD.innerHTML = displayPriceWd.toLocaleString("id-ID");
+  prWeD.innerHTML = displayPriceWe.toLocaleString("id-ID");
 }
