@@ -8,6 +8,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  list-style: none;
 }
 
 body {
@@ -123,6 +124,50 @@ main .row {
 }
 
 /* END MAIN */
+
+/* VILLA DETAIL */
+
+main .row {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1em;
+  align-items: start;
+}
+
+main .img-preview {
+  height: 400px;
+  background-color: var(--grey);
+}
+
+.villa-detail figcaption {
+  margin: 1.5em 0;
+}
+
+figcaption ul {
+  margin-top: 1em;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+figcaption ul li {
+  padding: 1em;
+  border-radius: 10px;
+  border: 1px solid #c4c4c4;
+  color: var(--grey);
+}
+
+figcaption ul li h5 {
+  margin-top: 1em;
+}
+
+.guide-profile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+  color: var(--grey);
+}
+
+/* END VILLA DETAIL */
 
 /* RESPONSIVE */
 /* DESKTOP VIEW */
