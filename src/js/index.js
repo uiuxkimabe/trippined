@@ -59,3 +59,10 @@ let displayPriceWe;
   prWdD.innerHTML = displayPriceWd.toLocaleString("id-ID");
   prWeD.innerHTML = displayPriceWe.toLocaleString("id-ID");
 }
+
+// Klik Navigator
+const hamBtn = document.querySelector(".hamBtn");
+const navigator = document.querySelector(".navigator");
+hamBtn.addEventListener("click", () => {
+  navigator.classList.toggle("open");
+});

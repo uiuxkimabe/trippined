@@ -57,6 +57,7 @@ nav {
   position: sticky;
   top: 0;
   background-color: var(--basic);
+  z-index: 1;
 }
 
 nav a {
@@ -82,6 +83,8 @@ nav a {
 .welcome {
   background-color: var(--basic);
   text-align: center;
+  position: sticky;
+  top: 4em;
 }
 
 .welcome > .filter-btn {
@@ -125,6 +128,84 @@ main .row {
 
 /* END MAIN */
 
+/* TERM CONDITION */
+
+#service {
+  padding: 2em 0;
+  margin-top: 2em;
+  text-align: center;
+}
+
+#service .row {
+  justify-content: flex-start;
+  gap: 1em;
+  margin-top: 2em;
+  overflow-x: scroll;
+}
+
+#service .row::-webkit-scrollbar {
+  scroll-snap-type: x mandatory;
+  display: none;
+}
+
+#service .row .cardSrv {
+  flex: 0 0 300px;
+  height: 300px;
+  align-items: flex-end;
+  border-radius: 10px;
+  padding: 1em;
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.cardSrv::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.514);
+}
+
+.cardSrv figcaption {
+  position: relative;
+  z-index: 1;
+  color: var(--basic);
+}
+
+/* END TERM CONDITION */
+
+/* FAQ */
+
+#faq {
+  padding: 2em 0;
+}
+
+#faq figcaption {
+  text-align: center;
+}
+
+#faq .row {
+  margin: 1em 0;
+}
+
+.ask-head,
+.ask-content {
+  padding: 10px;
+  border-bottom: 1px solid var(--grey);
+}
+
+.ask-content {
+  height: 0;
+  padding: 0;
+  overflow-y: scroll;
+}
+
+/* END FAQ */
+
+/* ROOM SECTION */
 /* VILLA DETAIL */
 
 main .row {
@@ -251,10 +332,39 @@ form figcaption .col {
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 1.5em;
+  padding: 1.5em 0 10px;
   background-color: var(--dark);
   color: var(--basic);
 }
+
+footer .features {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1em;
+}
+
+footer .col {
+  text-align: left;
+}
+
+footer ul li {
+  margin: 10px 0;
+}
+
+footer a {
+  color: var(--basic);
+}
+
+.address a {
+  gap: 1em;
+  justify-content: flex-start;
+}
+
+.copyright {
+  margin: 1em 0;
+  border-top: 1px solid var(--grey);
+  padding: 10px 0;
+}
+
 /* END FOOTER */
 
 /* RESPONSIVE */
@@ -283,6 +393,14 @@ footer {
     flex-direction: column;
     background-color: var(--basic);
     padding: 1em;
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+  }
+
+  .navigator.open {
+    transform: translateY(0);
+    opacity: 1;
   }
 
   .hamBtn {
