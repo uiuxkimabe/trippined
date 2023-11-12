@@ -24,12 +24,12 @@ displayHarga(villaC, 1800000, 2, 2, 2.1);
 
 // Villa D
 const villaD = new Price();
-displayHarga(villaD, 1200000, 3, 2, 2.1);
+displayHarga(villaD, 600000, 3, 1.5, 2.1);
 
 // Villa E
 const villaE = new Price();
-displayHarga(villaE, 1100000, 4, 2, 2.1);
+displayHarga(villaE, 1000000, 4, 1.5, 2.1);
 
 // Villa F
 const villaF = new Price();
-displayHarga(villaF, 900000, 5, 2, 2.1);
+displayHarga(villaE, 1000000, 5, 2, 2.1);

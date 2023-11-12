@@ -24,11 +24,11 @@ const priceWeekEnd = document.querySelectorAll(".caption .priceWe");
 let mainDisplayWd;
 let mainDisplayWe;
 
-// DITAMPILKAN PADA HALAMAN ROOM DETAIL
+// RINCIAN FUNCTION DISPLAY HARGA
+const nameId = document.querySelector(".title h3").textContent;
+const villaName = ["Villa A", "Villa B", "Villa C", "Villa D"];
 let rmDtlWd = document.querySelector(".title .priceWd");
 let rmDtlWe = document.querySelector(".title .priceWe");
-
-// RINCIAN FUNCTION DISPLAY HARGA
 
 // param = berisikan variable baru untuk memanggil class dengan isi new Price()
 // price = berisi harga dasara villa [wajib diisi]
@@ -45,6 +45,8 @@ function displayHarga(param, price, index, comWd, comWe) {
   mainDisplayWe = param.weekEnd();
   priceWeekDay[index].innerHTML = mainDisplayWd.toLocaleString("id-ID");
   priceWeekEnd[index].innerHTML = mainDisplayWe.toLocaleString("id-ID");
-  rmDtlWd.innerHTML = mainDisplayWd.toLocaleString("id-ID");
-  rmDtlWe.innerHTML = mainDisplayWe.toLocaleString("id-ID");
+  if (nameId === villaName[index]) {
+    rmDtlWd.innerHTML = mainDisplayWd.toLocaleString("id-ID");
+    rmDtlWe.innerHTML = mainDisplayWe.toLocaleString("id-ID");
+  }
 }
