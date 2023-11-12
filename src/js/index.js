@@ -6,87 +6,30 @@ hamBtn.addEventListener("click", () => {
 });
 
 /*? no js js needed from me */
-const priceWd = document.querySelectorAll(".priceWd");
-const priceWe = document.querySelectorAll(".priceWe");
-const rmCard = document.querySelectorAll(".rm-card");
 
-// desctructuring price dan room card
-let [prWdA, prWdB, prWdC, prWdD, prWdE, prWdF] = priceWd; // Harga WeekDay
-let [prWeA, prWeB, prWeC, prWeD, prWeE, prWeF] = priceWe; // Harga Week End
-let [villaA, villaB, villaC, villaD, villaE, villaF] = rmCard; //Nama Villa
-
-// Display Harga di Beranda
-let displayPriceWd;
-let displayPriceWe;
+// Harga ditampilkan di beranda dan detail villa
+// displayHarga(variable , harga modal, index, commWd,commWe)
 
 // Villa A
-{
-  villaA = new Price();
-  villaA.basicPrice = 1000000;
-  villaA.percentWd = 2;
-  villaA.percentWe = 2.3;
-  displayPriceWd = villaA.weekDay();
-  displayPriceWe = villaA.weekEnd();
-  prWdA.innerHTML = displayPriceWd.toLocaleString("id-ID");
-  prWeA.innerHTML = displayPriceWe.toLocaleString("id-ID");
-}
+const villaA = new Price();
+displayHarga(villaA, 1000000, 0, 2, 2.3);
 
 // Villa B
-{
-  villaB = new Price();
-  villaB.basicPrice = 1000000;
-  villaB.percentWd = 2;
-  villaB.percentWe = 2.3;
-  displayPriceWd = villaB.weekDay();
-  displayPriceWe = villaB.weekEnd();
-  prWdB.innerHTML = displayPriceWd.toLocaleString("id-ID");
-  prWeB.innerHTML = displayPriceWe.toLocaleString("id-ID");
-}
+const villaB = new Price();
+displayHarga(villaB, 1500000, 1, 1.8, 2.2);
 
 // Villa C
-{
-  villaC = new Price();
-  villaC.basicPrice = 1000000;
-  villaC.percentWd = 2;
-  villaC.percentWe = 2.3;
-  displayPriceWd = villaC.weekDay();
-  displayPriceWe = villaC.weekEnd();
-  prWdC.innerHTML = displayPriceWd.toLocaleString("id-ID");
-  prWeC.innerHTML = displayPriceWe.toLocaleString("id-ID");
-}
+const villaC = new Price();
+displayHarga(villaC, 1800000, 2, 2, 2.1);
 
 // Villa D
-{
-  villaD = new Price();
-  villaD.basicPrice = 1000000;
-  villaD.percentWd = 2;
-  villaD.percentWe = 2.3;
-  displayPriceWd = villaD.weekDay();
-  displayPriceWe = villaD.weekEnd();
-  prWdD.innerHTML = displayPriceWd.toLocaleString("id-ID");
-  prWeD.innerHTML = displayPriceWe.toLocaleString("id-ID");
-}
+const villaD = new Price();
+displayHarga(villaD, 1200000, 3, 2, 2.1);
 
 // Villa E
-{
-  villaE = new Price();
-  villaE.basicPrice = 1000000;
-  villaE.percentWd = 2;
-  villaE.percentWe = 2.3;
-  displayPriceWd = villaE.weekDay();
-  displayPriceWe = villaE.weekEnd();
-  prWdE.innerHTML = displayPriceWd.toLocaleString("id-ID");
-  prWeE.innerHTML = displayPriceWe.toLocaleString("id-ID");
-}
+const villaE = new Price();
+displayHarga(villaE, 1100000, 4, 2, 2.1);
 
 // Villa F
-{
-  villaF = new Price();
-  villaF.basicPrice = 1000000;
-  villaF.percentWd = 2;
-  villaF.percentWe = 2.3;
-  displayPriceWd = villaF.weekDay();
-  displayPriceWe = villaF.weekEnd();
-  prWdF.innerHTML = displayPriceWd.toLocaleString("id-ID");
-  prWeF.innerHTML = displayPriceWe.toLocaleString("id-ID");
-}
+const villaF = new Price();
+displayHarga(villaF, 900000, 5, 2, 2.1);
