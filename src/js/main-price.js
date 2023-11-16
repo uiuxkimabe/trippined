@@ -19,8 +19,8 @@ class Price {
 }
 
 // MENAMPILKAN HARGA VILLA - VILLA DIBERANDA
-const hargaWd = document.querySelectorAll(".priceWd");
-const hargaWe = document.querySelectorAll(".priceWe");
+const hargaWd = document.querySelectorAll(".caption .priceWd");
+const hargaWe = document.querySelectorAll(".caption .priceWe");
 
 function showPrice(params, basic, comWd, comWe, index) {
   params = new Price();

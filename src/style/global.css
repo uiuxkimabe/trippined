@@ -263,7 +263,9 @@ figcaption ul li h5 {
 }
 
 #booking form {
+  padding: 1em;
   margin-top: 1em;
+  border: 1px solid var(--grey);
 }
 
 form input {

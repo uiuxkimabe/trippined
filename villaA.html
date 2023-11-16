@@ -284,8 +284,39 @@
     <!-- FOOTER -->
     <footer>
       <div class="container">
-        <div class="row">
-          <h3>trippined.com</h3>
+        <div class="row features d-grid">
+          <div class="col">
+            <a href="#">
+              <h3>trippined.com</h3>
+            </a>
+          </div>
+          <div class="col">
+            <h3>Fitur Lain</h3>
+            <ul>
+              <li>Layanan Lain</li>
+              <li>F.A.Q</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Layanan Lain</h3>
+            <ul>
+              <li>Katering</li>
+              <li>Sewa BBQ Item</li>
+              <li>Sewa Motor</li>
+              <li>Sewa Scooter Listrik</li>
+            </ul>
+          </div>
+          <div class="col address">
+            <h3>Alamat</h3>
+            <a href="#" class="d-flex">
+              <span class="material-symbols-outlined"> location_on </span>
+              <p>Jl. Raya Puncak Km. 70. Tugu Utara Rt. 02/01</p>
+            </a>
+            <div class="row"></div>
+          </div>
+        </div>
+        <div class="row copyright">
+          <p>Copyright © 2023. Kiki Afrianto</p>
         </div>
       </div>
     </footer>
@@ -296,10 +327,17 @@
     <script src="./src/js/main-price.js"></script>
     <script src="./src/js/index.js"></script>
     <script>
-      {
-  const villaA = new Price();
-  showPrice(villaA, 1000000, 2, 2.5, 0);
-}
+      const priceDtlWd = document.querySelector('.title .priceWd')
+      const priceDtlWe = document.querySelector('.title .priceWe')
+
+      const villaA = new Price();
+      villaA.basicPrice = 1000000;
+      villaA.comWd = 2;
+      villaA.comWe = 2.5;
+      let showWd = villaA.weekDay();
+      let showWe = villaA.weekEnd();
+      priceDtlWd.innerHTML = showWd.toLocaleString("id-ID");
+      priceDtlWe.innerHTML = showWe.toLocaleString("id-ID");
     </script>
 
     <!-- AOS -->
