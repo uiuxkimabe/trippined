@@ -167,11 +167,11 @@
               <figcaption class="d-flex">
                 <div class="col">
                   <label>Tanggal Cek In</label> <br>
-                  <input type="date" name="cekIn" id="cekIn" required>
+                  <input type="date" name="cekIn" class="date" id="cekIn" required>
                 </div>
                 <div class="col">
                   <label>Tanggal Cek Out</label> <br>
-                  <input type="date" name="cekOut" id="cekOut" required>
+                  <input type="date" name="cekOut" class="date" id="cekOut" required>
                 </div>
               </figcaption>
               <figcaption class="d-flex">
@@ -201,7 +201,7 @@
               <figcaption class="payment d-flex">
               <div class="col">
                 <label>Total Pembayaran</label>
-                <input type="text" placeholder="0" disabled>
+                <input type="text" placeholder="0" class="totalPayment" disabled>
               </div>
               <input type="hidden" name="Villa A">
               </figcaption>
@@ -242,16 +242,6 @@
               <div class="caption d-flex">
                 <figcaption>
                   <h3>Villa B</h3>
-                  <h5>
-                    Week Day : <span class="price priceWd">0</span> / Night
-                  </h5>
-                  <h5>
-                    Week End : <span class="price priceWe">0</span> / Night
-                  </h5>
-                </figcaption>
-                <figcaption>
-                  <h4>Pemandu</h4>
-                  <h5>M. Syarifuddin</h5>
                 </figcaption>
               </div>
             </figure>
@@ -262,16 +252,6 @@
               <div class="caption d-flex">
                 <figcaption>
                   <h3>Villa C</h3>
-                  <h5>
-                    Week Day : <span class="price priceWd">0</span> / Night
-                  </h5>
-                  <h5>
-                    Week End : <span class="price priceWe">0</span> / Night
-                  </h5>
-                </figcaption>
-                <figcaption>
-                  <h4>Pemandu</h4>
-                  <h5>M. Syarifuddin</h5>
                 </figcaption>
               </div>
             </figure>
@@ -326,18 +306,12 @@
     <!-- 👇 javascript code file 👇 -->
     <script src="./src/js/main-price.js"></script>
     <script src="./src/js/index.js"></script>
+    <script src="./src/js/booking.js"></script>
     <script>
-      const priceDtlWd = document.querySelector('.title .priceWd')
-      const priceDtlWe = document.querySelector('.title .priceWe')
+      
+    const villaA = new Price();
+    showPrice(villaA, 1000000, 2, 2.5, 0);
 
-      const villaA = new Price();
-      villaA.basicPrice = 1000000;
-      villaA.comWd = 2;
-      villaA.comWe = 2.5;
-      let showWd = villaA.weekDay();
-      let showWe = villaA.weekEnd();
-      priceDtlWd.innerHTML = showWd.toLocaleString("id-ID");
-      priceDtlWe.innerHTML = showWe.toLocaleString("id-ID");
     </script>
 
     <!-- AOS -->
