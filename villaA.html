@@ -306,11 +306,49 @@
     <!-- 👇 javascript code file 👇 -->
     <script src="./src/js/main-price.js"></script>
     <script src="./src/js/index.js"></script>
-    <script src="./src/js/booking.js"></script>
     <script>
+      const priceDtlWd = document.querySelector('.title .priceWd')
+      const priceDtlWe = document.querySelector('.title .priceWe')
+      const bookDate = document.querySelectorAll("form .date");
+      const qtyDay = document.getElementById("jmlHari");
+      let totalPayment = document.querySelector(".totalPayment");
+
+      // Harga
+      const villaA = new Price();
+      villaA.basicPrice = 1000000;
+      villaA.comWd = 2;
+      villaA.comWe = 2.5;
+      let showWd = villaA.weekDay();
+      let showWe = villaA.weekEnd();
+      priceDtlWd.innerHTML = showWd.toLocaleString("id-ID");
+      priceDtlWe.innerHTML = showWe.toLocaleString("id-ID");
+      let payment
+
       
-    const villaA = new Price();
-    showPrice(villaA, 1000000, 2, 2.5, 0);
+      // Menangkap Tanggal Cek In & Cek Out
+      function pickDate() {
+        let cekIn = new Date(bookDate[0].value).getDate();
+        let cekOut = new Date(bookDate[1].value).getDate();
+        let dayIn = new Date(bookDate[0].value).getDay();
+        let dayOut = new Date(bookDate[1].value).getDay();
+        let nights = cekOut - cekIn;
+        qtyDay.value = nights;
+
+        if (dayIn == 5 || dayIn == 6 || dayIn == 0) {
+          totalPaymen.value = showWd * nights
+        } else {
+          totalPayment.value = showWe * nights
+          
+        }
+
+        console.info(cekIn, cekOut, qtyDay);
+      }
+
+      bookDate.forEach((element) => {
+        element.addEventListener("change", () => {
+          pickDate();
+        });
+      });
 
     </script>
 
