@@ -110,7 +110,7 @@
             </figcaption>
             <figcaption class="nearby">
               <h3>Destinasi Terdekat</h3>
-              <ul class="d-flex">
+              <ul class="d-grid">
                 <li>
                   <span class="material-symbols-outlined"> location_on </span>
                   <h5>Taman Safari</h5>
@@ -198,12 +198,15 @@
                 <label>Pesan tambahan<label> <br>
                   <input type="text" name="pesan" id="pesan" placeholder="Ex. Smooking Area" required>
               </figcaption>
+              <figcaption>
+                  <input type="hidden" name="villaname" value="Villa A">
+                  <input type="hidden" name="hargavilla" id="bookprice">
+              </figcaption>
               <figcaption class="payment d-flex">
               <div class="col">
                 <label>Total Pembayaran</label>
                 <input type="text" placeholder="0" class="totalPayment" disabled>
               </div>
-              <input type="hidden" name="Villa A">
               </figcaption>
               <div class="notes">
                 <h3>Notes</h3>
@@ -312,6 +315,7 @@
       const bookDate = document.querySelectorAll("form .date");
       const qtyDay = document.getElementById("jmlHari");
       let totalPayment = document.querySelector(".totalPayment");
+      let hargaBooking = document.getElementById('bookPrice')
 
       // Harga
       const villaA = new Price();
@@ -335,10 +339,13 @@
         qtyDay.value = nights;
 
         if (dayIn == 5 || dayIn == 6 || dayIn == 0) {
-          totalPaymen.value = showWd * nights
+          payment = showWd * nights
+          hargaBooking.value = payment
+          totalPayment.value = payment.toLocaleString('id-ID')
         } else {
-          totalPayment.value = showWe * nights
-          
+          payment = showWe * nights
+          hargaBooking.value = payment
+          totalPayment.value = payment.toLocaleString('id-ID')
         }
 
         console.info(cekIn, cekOut, qtyDay);

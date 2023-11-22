@@ -266,12 +266,15 @@ figcaption ul li h5 {
   padding: 1em;
   margin-top: 1em;
   border: 1px solid var(--grey);
+  border-radius: 10px;
 }
 
 form input {
   width: 100%;
   margin: 10px 0;
   padding: 10px;
+  border-radius: 5px;
+  border: 0.5px solid var(--grey);
 }
 
 form figcaption {
