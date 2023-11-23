@@ -159,7 +159,7 @@
               <h1>Booking Villa</h1>
               <p>Lakukan proses booking disini.</p>
             </figcaption>
-            <form>
+            <form name="submit-to-google-sheet">
               <figcaption>
                 <label>Nama</label> <br>
                 <input type="text" name="nama" placeholder="Ex. Chris Martin" required>
@@ -201,6 +201,8 @@
               <figcaption>
                   <input type="hidden" name="villaname" value="Villa A">
                   <input type="hidden" name="hargavilla" id="bookprice">
+                  <input type="hidden" name="jmlHari" id="days">
+                  <input type="hidden" name="invNo" id="invoice">
               </figcaption>
               <figcaption class="payment d-flex">
               <div class="col">
@@ -230,6 +232,24 @@
       </div>
     </section>
     <!-- END SECTION BOOKING -->
+
+    <!-- NOTIF BOOKING -->
+    <section id="notif">
+      <div class="container">
+        <div class="row d-flex">
+          <figure>
+            <figcaption>
+              <h3>On Proses ...</h3>
+              <p>Villa yang kamu pesan, sedang dalam proses. Segera akan kami update kalender. Segera konfirmasi pesananmu disini.</p>
+              <button type="button" class="confirm">Konfirmasi</button>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- END NOTIF BOOKING -->
 
     <!-- SECTION SIMILAR VILLA -->
     <section id="similar">
@@ -309,13 +329,15 @@
     <!-- 👇 javascript code file 👇 -->
     <script src="./src/js/main-price.js"></script>
     <script src="./src/js/index.js"></script>
+    <script src="src/js/booking.js"></script>
     <script>
       const priceDtlWd = document.querySelector('.title .priceWd')
       const priceDtlWe = document.querySelector('.title .priceWe')
       const bookDate = document.querySelectorAll("form .date");
       const qtyDay = document.getElementById("jmlHari");
       let totalPayment = document.querySelector(".totalPayment");
-      let hargaBooking = document.getElementById('bookPrice')
+      let hargaBooking = document.getElementById('bookprice')
+      let days = document.getElementById('days')
 
       // Harga
       const villaA = new Price();
@@ -339,12 +361,14 @@
         qtyDay.value = nights;
 
         if (dayIn == 5 || dayIn == 6 || dayIn == 0) {
-          payment = showWd * nights
-          hargaBooking.value = payment
-          totalPayment.value = payment.toLocaleString('id-ID')
-        } else {
           payment = showWe * nights
           hargaBooking.value = payment
+          days.value = nights
+          totalPayment.value = payment.toLocaleString('id-ID')
+        } else {
+          payment = showWd * nights
+          hargaBooking.value = payment
+          days.value = nights
           totalPayment.value = payment.toLocaleString('id-ID')
         }
 
