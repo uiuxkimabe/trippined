@@ -241,11 +241,21 @@ figcaption ul li h5 {
   margin-top: 1em;
 }
 
+.guider {
+  border-radius: 10px;
+  border: 1px solid #c4c4c4;
+}
+
+.guider figcaption {
+  width: 100%;
+}
+
 .guide-profile {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 1em;
+  padding: 1em;
   color: var(--grey);
 }
 

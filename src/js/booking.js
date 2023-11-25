@@ -24,6 +24,10 @@ closeInv.addEventListener("click", () => {
   notif.style.display = "none";
 });
 
+// Copy Invoice
+const copybooking = document.querySelectorAll(".copybooking");
+
+
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbyor4S0P7DLiKSUB3ZWduLFkOHomipkVWC-GrXqsQZQnX0xxl9HmNdHh8V4zGiAAggWRA/exec";
 const form = document.forms["submit-to-google-sheet"];

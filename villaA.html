@@ -138,9 +138,14 @@
                 <span class="material-symbols-outlined">
                   person
                   </span>
-                <figcaption>
-                  <h4>Pemandu</h5>
+                <figcaption class="d-flex">
+                  <div>
+                    <h4>Pemandu</h5>
                     <p>M. Syarifuddin</p>
+                  </div>
+                  <span class="material-symbols-outlined">
+                    chevron_right
+                    </span>
                 </figcaption>
               </a>
             </figcaption>
@@ -162,7 +167,7 @@
             <form name="submit-to-google-sheet">
               <figcaption>
                 <label>Nama</label> <br>
-                <input type="text" name="nama" placeholder="Ex. Chris Martin" required>
+                <input type="text" name="nama" id="customerName" placeholder="Ex. Chris Martin" required>
               </figcaption>
               <figcaption class="d-flex">
                 <div class="col">
@@ -236,28 +241,28 @@
           <div class="card-invoice">
             <div class="card-header d-flex">
               <figcaption>
-                <h1 class="villaName">Nama Villa</h1>
-                <h4>Invoice No : <span class="invoiceNumber">00001</span></h4>
+                <h1 class="copybooking">Nama Villa</h1>
+                <h4>Invoice No : <span class="copybooking">00001</span></h4>
               </figcaption>
               <h1>Customer</h1>
             </div>
             <div class="card-content">
               <div class="row d-grid">
                 <ul>
-                  <li><b>Check In :</b> <span class="dateIn">03/11/23</span></li>
-                  <li><b>Check Out :</b> <span class="dateOut">04/11/23</span></li>
+                  <li><b>Check In :</b> <span class="copybooking">03/11/23</span></li>
+                  <li><b>Check Out :</b> <span class="copybooking">04/11/23</span></li>
                 </ul>
                 <ul>
-                  <li><b>Pax :</b> <span class="pax">50</span></li>
-                  <li><b>Night :</b> <span class="nightDays">1</span></li>
+                  <li><b>Pax :</b> <span class="copybooking">50</span></li>
+                  <li><b>Night :</b> <span class="copybooking">1</span></li>
                 </ul>
                 <ul>
-                  <li><b>Phone :</b> <span class="phone">081385532791</span></li>
-                  <li><b>Pesan :</b> <span class="addMsg">Oke</span></li>
+                  <li><b>Phone :</b> <span class="copybooking">081385532791</span></li>
+                  <li><b>Pesan :</b> <span class="copybooking">Oke</span></li>
                 </ul>
               </div>
               <div class="card-payment d-flex">
-                <h3>Total Payment : <span class="pricePayment">2.000.000</span></h3>
+                <h3>Total Payment : <span class="copybooking">2.000.000</span></h3>
                 <h3>DP 50% : 1.000.000</h3>
               </div>
               <div class="card-btn d-flex">
