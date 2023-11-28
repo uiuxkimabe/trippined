@@ -200,8 +200,8 @@
                   <input type="text" name="pesan" id="pesan" placeholder="Ex. Smooking Area" required>
               </figcaption>
               <figcaption>
-                  <input type="hidden" name="villaname" value="Villa A">
-                  <input type="hidden" name="hargavilla" id="bookprice">
+                  <input type="hidden" name="villaname" id="villaName" value="Villa A">
+                  <input type="hidden" name="hargavilla"  id="bookprice">
                   <input type="hidden" name="jmlHari" id="days">
                   <input type="hidden" name="invNo" id="invoice">
               </figcaption>
@@ -244,7 +244,7 @@
                 <h1 class="copybooking">Nama Villa</h1>
                 <h4>Invoice No : <span class="copybooking">00001</span></h4>
               </figcaption>
-              <h1>Customer</h1>
+              <h1 class="copybooking">Customer</h1>
             </div>
             <div class="card-content">
               <div class="row d-grid">
@@ -366,6 +366,19 @@
       let hargaBooking = document.getElementById('bookprice')
       let days = document.getElementById('days')
 
+      // Copy Check Booking
+      const copybooking = document.querySelectorAll('.copybooking')
+      const villaName = document.getElementById('villaName')
+      const invNo = document.getElementById('invoice')
+      const customerName = document.getElementById('customerName')
+
+      function copyIdentity() {
+        copybooking[0].innerHTML = villaName.value
+        copybooking[1].innerHTML = getPwd()
+        copybooking[2].innerHTML = customerName.value
+        return
+      }
+
       // Harga
       const villaA = new Price();
       villaA.basicPrice = 1000000;
@@ -384,18 +397,26 @@
         let cekOut = new Date(bookDate[1].value).getDate();
         let dayIn = new Date(bookDate[0].value).getDay();
         let dayOut = new Date(bookDate[1].value).getDay();
+        let monthIn = new Date(bookDate[0].value).getMonth() + 1
+        let monthOut = new Date(bookDate[1].value).getMonth() + 1
+        let yearIn = new Date(bookDate[0].value).getFullYear()
+        let yearOut = new Date(bookDate[0].value).getFullYear()
         let nights = cekOut - cekIn;
         qtyDay.value = nights;
-
+        
         if (dayIn == 5 || dayIn == 6 || dayIn == 0) {
           payment = showWe * nights
           hargaBooking.value = payment
           days.value = nights
+          copybooking[3].innerHTML = `${cekIn} / ${monthIn} / ${yearIn}`
+          copybooking[4].innerHTML = `${cekOut} / ${monthOut} / ${yearOut}`
           totalPayment.value = payment.toLocaleString('id-ID')
         } else {
           payment = showWd * nights
           hargaBooking.value = payment
           days.value = nights
+          copybooking[3].innerHTML = `${cekIn} / ${monthIn} / ${yearIn}`
+          copybooking[4].innerHTML = `${cekOut} / ${monthOut} / ${yearOut}`
           totalPayment.value = payment.toLocaleString('id-ID')
         }
 
@@ -405,6 +426,7 @@
       bookDate.forEach((element) => {
         element.addEventListener("change", () => {
           pickDate();
+          copyIdentity()
         });
       });
 
