@@ -365,17 +365,27 @@
       let totalPayment = document.querySelector(".totalPayment");
       let hargaBooking = document.getElementById('bookprice')
       let days = document.getElementById('days')
+      const noTelpon = document.getElementById('phone')
+      const pesanTambahan = document.getElementById('pesan')
 
       // Copy Check Booking
       const copybooking = document.querySelectorAll('.copybooking')
       const villaName = document.getElementById('villaName')
       const invNo = document.getElementById('invoice')
       const customerName = document.getElementById('customerName')
+      const tglCheckIn = document.getElementById('cekIn')
+      const tglCheckOut = document.getElementById('cekOut')
+      // Destructuring copybooking
+      let [namaVIlla,noInvoice,namaCustomer,tglCi,tglCo,jmlPax,jmlMlm,noPhone,addMsg,totalByr] = copybooking;
 
       function copyIdentity() {
-        copybooking[0].innerHTML = villaName.value
-        copybooking[1].innerHTML = getPwd()
-        copybooking[2].innerHTML = customerName.value
+        namaVIlla.innerHTML = villaName.value
+        noInvoice.innerHTML = getPwd()
+        namaCustomer.innerHTML = customerName.value
+        jmlPax.innerHTML = days.value
+        jmlMlm.innerHTML = qtyDay.value
+        noPhone.innerHTML = phone.value 
+        addMsg.innerHTML = pesanTambahan.value 
         return
       }
 
@@ -401,23 +411,25 @@
         let monthOut = new Date(bookDate[1].value).getMonth() + 1
         let yearIn = new Date(bookDate[0].value).getFullYear()
         let yearOut = new Date(bookDate[0].value).getFullYear()
-        let nights = cekOut - cekIn;
+        let nights = dayOut - dayIn;
         qtyDay.value = nights;
         
         if (dayIn == 5 || dayIn == 6 || dayIn == 0) {
           payment = showWe * nights
           hargaBooking.value = payment
           days.value = nights
-          copybooking[3].innerHTML = `${cekIn} / ${monthIn} / ${yearIn}`
-          copybooking[4].innerHTML = `${cekOut} / ${monthOut} / ${yearOut}`
+          tglCi.innerHTML = `${cekIn} / ${monthIn} / ${yearIn}`
+          tglCo.innerHTML = `${cekOut} / ${monthOut} / ${yearOut}`
           totalPayment.value = payment.toLocaleString('id-ID')
+          totalByr.innerHTML = totalPayment.value
         } else {
           payment = showWd * nights
           hargaBooking.value = payment
           days.value = nights
-          copybooking[3].innerHTML = `${cekIn} / ${monthIn} / ${yearIn}`
-          copybooking[4].innerHTML = `${cekOut} / ${monthOut} / ${yearOut}`
+          tglCi.innerHTML = `${cekIn} / ${monthIn} / ${yearIn}`
+          tglCo.innerHTML = `${cekOut} / ${monthOut} / ${yearOut}`
           totalPayment.value = payment.toLocaleString('id-ID')
+          totalByr.innerHTML = totalPayment.value
         }
 
         console.info(cekIn, cekOut, qtyDay);
