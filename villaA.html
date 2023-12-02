@@ -238,39 +238,22 @@
     <section id="notif">
       <div class="container">
         <div class="row d-flex">
-          <div class="card-invoice">
-            <div class="card-header d-flex">
-              <figcaption>
-                <h1 class="copybooking">Nama Villa</h1>
-                <h4>Invoice No : <span class="copybooking">00001</span></h4>
-              </figcaption>
-              <h1 class="copybooking">Customer</h1>
+          <figcaption>
+            <h3>Pemesanan Villa Sedang Dalam Proses</h3>
+            <h3>Baca Ketentuan Berikut :</h3>
+            <ul>
+              <li>Segera konfirmasi dengan melakukan pembayaran DP.</li>
+              <li>Kegiatan cancel tidak bisa di lakukan refund.</li>
+              <li>Pembayaran DP dapat di lakukan ke no rek berikut : <br><b>1149164962</b><br><b>BNI. Kiki Afrianto</b></li>
+            </ul>
+            <div class="agreement d-flex">
+              <input type="checkbox" id="agree" >
+              <p>Saya Mengerti</p>
             </div>
-            <div class="card-content">
-              <div class="row d-grid">
-                <ul>
-                  <li><b>Check In :</b> <span class="copybooking">03/11/23</span></li>
-                  <li><b>Check Out :</b> <span class="copybooking">04/11/23</span></li>
-                </ul>
-                <ul>
-                  <li><b>Pax :</b> <span class="copybooking">50</span></li>
-                  <li><b>Night :</b> <span class="copybooking">1</span></li>
-                </ul>
-                <ul>
-                  <li><b>Phone :</b> <span class="copybooking">081385532791</span></li>
-                  <li><b>Pesan :</b> <span class="copybooking">Oke</span></li>
-                </ul>
-              </div>
-              <div class="card-payment d-flex">
-                <h3>Total Payment : <span class="copybooking">2.000.000</span></h3>
-                <h3>DP 50% : 1.000.000</h3>
-              </div>
-              <div class="card-btn d-flex">
-                <button type="button">Konfirmasi</button>
-                <button type="button" id="closeInv">Tutup</button>
-              </div>
+            <div class="card-btn">
+              <button type="button" id="closeInv" disabled>Konfirmasi</button>
             </div>
-          </div>
+          </figcaption>
         </div>
       </div>
     </section>
@@ -358,36 +341,7 @@
     <script src="./src/js/index.js"></script>
     <script src="src/js/booking.js"></script>
     <script>
-      const priceDtlWd = document.querySelector('.title .priceWd')
-      const priceDtlWe = document.querySelector('.title .priceWe')
-      const bookDate = document.querySelectorAll("form .date");
-      const qtyDay = document.getElementById("jmlHari");
-      let totalPayment = document.querySelector(".totalPayment");
-      let hargaBooking = document.getElementById('bookprice')
-      let days = document.getElementById('days')
-      const noTelpon = document.getElementById('phone')
-      const pesanTambahan = document.getElementById('pesan')
-
-      // Copy Check Booking
-      const copybooking = document.querySelectorAll('.copybooking')
-      const villaName = document.getElementById('villaName')
-      const invNo = document.getElementById('invoice')
-      const customerName = document.getElementById('customerName')
-      const tglCheckIn = document.getElementById('cekIn')
-      const tglCheckOut = document.getElementById('cekOut')
-      // Destructuring copybooking
-      let [namaVIlla,noInvoice,namaCustomer,tglCi,tglCo,jmlPax,jmlMlm,noPhone,addMsg,totalByr] = copybooking;
-
-      function copyIdentity() {
-        namaVIlla.innerHTML = villaName.value
-        noInvoice.innerHTML = getPwd()
-        namaCustomer.innerHTML = customerName.value
-        jmlPax.innerHTML = days.value
-        jmlMlm.innerHTML = qtyDay.value
-        noPhone.innerHTML = phone.value 
-        addMsg.innerHTML = pesanTambahan.value 
-        return
-      }
+      
 
       // Harga
       const villaA = new Price();
@@ -397,50 +351,9 @@
       let showWd = villaA.weekDay();
       let showWe = villaA.weekEnd();
       priceDtlWd.innerHTML = showWd.toLocaleString("id-ID");
-      priceDtlWe.innerHTML = showWe.toLocaleString("id-ID");
-      let payment
-
+      priceDtlWe.innerHTML = showWe.toLocaleString("id-ID");   
       
-      // Menangkap Tanggal Cek In & Cek Out
-      function pickDate() {
-        let cekIn = new Date(bookDate[0].value).getDate();
-        let cekOut = new Date(bookDate[1].value).getDate();
-        let dayIn = new Date(bookDate[0].value).getDay();
-        let dayOut = new Date(bookDate[1].value).getDay();
-        let monthIn = new Date(bookDate[0].value).getMonth() + 1
-        let monthOut = new Date(bookDate[1].value).getMonth() + 1
-        let yearIn = new Date(bookDate[0].value).getFullYear()
-        let yearOut = new Date(bookDate[0].value).getFullYear()
-        let nights = dayOut - dayIn;
-        qtyDay.value = nights;
-        
-        if (dayIn == 5 || dayIn == 6 || dayIn == 0) {
-          payment = showWe * nights
-          hargaBooking.value = payment
-          days.value = nights
-          tglCi.innerHTML = `${cekIn} / ${monthIn} / ${yearIn}`
-          tglCo.innerHTML = `${cekOut} / ${monthOut} / ${yearOut}`
-          totalPayment.value = payment.toLocaleString('id-ID')
-          totalByr.innerHTML = totalPayment.value
-        } else {
-          payment = showWd * nights
-          hargaBooking.value = payment
-          days.value = nights
-          tglCi.innerHTML = `${cekIn} / ${monthIn} / ${yearIn}`
-          tglCo.innerHTML = `${cekOut} / ${monthOut} / ${yearOut}`
-          totalPayment.value = payment.toLocaleString('id-ID')
-          totalByr.innerHTML = totalPayment.value
-        }
 
-        console.info(cekIn, cekOut, qtyDay);
-      }
-
-      bookDate.forEach((element) => {
-        element.addEventListener("change", () => {
-          pickDate();
-          copyIdentity()
-        });
-      });
 
     </script>
 
