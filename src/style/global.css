@@ -7,23 +7,20 @@ body {
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  font-family: var(--nunito);
+  font-family: var(--hind);
   text-decoration: none;
+  transition: .3s ease-in-out;
 }
 
 :root {
   /* Font Family */
-  --nunito: 'Nunito',
-    sans-serif;
-  --general: 'General Sans',
+  --hind: 'Hind',
     sans-serif;
   /* Color */
   --dark: #0a0909;
   --basic: #fff;
   --grey: #d4c7c7;
 }
-
-h1,h2,h3,h4,h5,h6 {font-family: var(--general);}
 
 .container {
   margin: auto;
