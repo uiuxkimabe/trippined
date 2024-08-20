@@ -1,147 +1,110 @@
-/* Nav */
+/* nav */
 
 nav {
     position: sticky;
     top: 0;
+    z-index: 999;
     background-color: var(--basic);
     border-bottom: .5px solid var(--grey);
-    padding: 1em 0;
-    z-index: 9999;
 }
 
-nav .menu {
-    width: 250px;
-    position: fixed;
-    top: 65px;
-    right: 5%;
-    background-color: var(--basic);
-    flex-direction: column;
-    align-items: flex-start;
-    border: 1px solid var(--grey);
-    border-radius: 8px;
-    box-shadow: 0 6px 6px rgba(0,0,0,.2);
-    transform: translateY(-100%);
-    visibility: hidden;
-    overflow: hidden;
-}
-
-nav .menu.show {
-    transform: translateY(0);
-    visibility: visible;
-}
-
-nav .menu a {
-    display: inline-block;
-    width: 100%;
-    padding: 1em;
+nav a {
     color: var(--dark);
 }
 
-nav .menu a:hover {
-    background-color: var(--grey);
-}
-
-.hamBtn {
-    justify-content: center;
-}
-
-/* End Nav */
-
-/* Main */
-
-main .filter {
-    position: sticky;
-    top: 55px;
-    background-color: var(--basic);
+nav .logo {
+    display: block;
     padding: 1em 0;
 }
 
-main .filter-list {
-    overflow-x: scroll;
-    justify-content: flex-start;
+nav .socmed {
     gap: 1em;
 }
 
-::-webkit-scrollbar {
-    display: none;
-    scroll-snap-type: mandatory;
-}
-
-.filter-list li {
-    padding: .3em .5em;
-    border: 1px solid var(--grey);
-    border-radius: 8px;
-}
-
-.list-villa {
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    gap: 1em;
-    margin-top: 1.5em;
-}
-
-.list-villa .card {
-    padding: .5em;
-    /* border: .5px solid var(--grey); */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,.3);
-}
-
-.list-villa img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.list-villa .description {
+nav .menu {
+    position: absolute;
+    top: 55px;
+    right: 5%;
+    z-index: 0;
+    flex-direction: column;
     align-items: flex-start;
-    padding: 0 .5em;
-}
-
-.card .price {
-    flex-wrap: wrap;
-    gap: 1em;
-}
-
-.price .price-list {
-    padding: 0 .5em;
-}
-
-.description .host {
-    margin-bottom: 1em;
-}
-
-.host span {
-    margin-right: 5px;
-}
-
-.list-villa button {
-    padding: 1em;
-    width: 100%;
-    background-color: var(--dark);
-    color: var(--basic);
-    border: none;
-    border-radius: 8px;
-    text-transform: uppercase;
-}
-
-/* End Main */
-
-/* Villa Detail */
-
-#detail {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
+    justify-content: center;
+    width: 200px;
+    border-radius: 10px;
     background-color: var(--basic);
-    width: 100vw;
-    height: 100vh;
-    transform: translateY(100%);
+    box-shadow: 0 8px 8px rgba(0,0,0,.2);
+    border: .5px solid var(--grey);
+    display: none;
 }
 
-#detail.show {
-    transform: translateY(0);
-    
+nav .menu a {
+    display: block;
+    padding: 1em;
 }
+
+nav .menu.show {
+    display: block;
+}
+
+
+/* End nav */
+
+/* Hero */
+
+#villas {
+    padding: 1em 0;
+}
+
+#villas a {
+    color: var(--dark);
+}
+
+#villas .row {
+    margin: 1em 0;
+    gap: 1.5em;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+
+#villas .card {
+    min-width: 300px;
+    border-radius: 10px;
+}
+
+#villas .card h3 {
+    font-weight: 500;
+}
+
+#villas .card .img-slide {
+    height: 250px;
+    border-radius: 10px;
+    background-color: var(--grey);
+    overflow: hidden;
+    position: relative;
+}
+
+.card .img-slide img {
+    width: 100%;
+    height: 100px;
+}
+
+#villas .card .caption {
+    margin: .5em 0;
+    align-items: flex-start;
+}
+
+.card .caption .price-list {
+    color: #5c5c5c;
+    margin-top: 5px;
+}
+
+.card .caption span {
+    color: #5c5c5c;
+}
+
+.card .caption .max-pax {
+    justify-content: flex-start;
+    gap: 10px;
+    color: #5c5c5c;
+}
+
+/* End Hero */

@@ -1,30 +1,31 @@
-/*? no js js needed from me */
+// Menu Btn
 
-// Click Menu Button
-
-const hamBtn = document.querySelector('.hamBtn')
 const menu = document.querySelector('nav .menu')
+const menuBtn = document.querySelector('nav .socmed .menuBtn')
 
-
-document.addEventListener('click', (e) => {
-    if (!hamBtn.contains(e.target)) {
-        menu.classList.remove('show')
-    } else {
-        menu.classList.add('show')
-    }
-});
-
-const cardAll = document.querySelectorAll('.list-villa .card')
-const villaName = document.querySelectorAll('.card .villa-name')
-const cardDetail = document.querySelector('#detail')
-const close = document.querySelector('.close')
-cardAll.forEach(element => {
-    element.addEventListener('click', () => {
-        cardDetail.classList.add('show');
-    })
-});
-
-close.addEventListener('click', () => {
-    cardDetail.classList.remove('show');
-    
+menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('show')
 })
+
+// Tampilkan nama villa dan 
+
+const price = document.querySelectorAll('.card .caption .price-list .price')
+const captionVilla = document.querySelectorAll('.caption h3')
+const capacity = document.querySelectorAll('.card .caption .max-pax .capacity')
+const imgSlide = document.querySelectorAll('.card .img-slide')
+
+
+
+console.info(price[0])
+
+class ListVilla {
+    villaName;
+    priceWd;
+    priceWe;
+    capacity;
+    priceShow(param) {
+        price[param].innerHTML = `${this.priceWd} - ${this.priceWe} / Night`
+        captionVilla[param].innerHTML = this.villaName
+        capacity[param].innerHTML = `Up to ${this.capacity} Pax`
+    }
+}
