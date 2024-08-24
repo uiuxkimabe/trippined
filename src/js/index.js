@@ -1,11 +1,18 @@
 // Menu Btn
 
 const menu = document.querySelector('nav .menu')
+const menuLink = document.querySelectorAll('nav .menu a')
 const menuBtn = document.querySelector('nav .socmed .menuBtn')
 
 menuBtn.addEventListener('click', () => {
     menu.classList.toggle('show')
 })
+
+menuLink.forEach(element => {
+    element.addEventListener('click', () => {
+        menu.classList.remove('show')
+    })
+});
 
 // Tampilkan nama villa dan 
 

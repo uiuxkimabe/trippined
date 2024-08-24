@@ -64,8 +64,8 @@ nav .menu.show {
 
 /* List Villa */
 
-#villas {
-    padding: 1em 0;
+#villas, #vehicle {
+    padding: 2em 0;
 }
 
 #villas a {
@@ -121,3 +121,41 @@ nav .menu.show {
 }
 
 /* End List Villa */
+
+/* Vehicle */
+
+#vehicle .row {
+    overflow-y: scroll;
+    margin: 1em 0;
+    justify-content: flex-start;
+    gap: 1em;
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: left;
+    flex-wrap: nowrap;
+}
+
+#vehicle .card-vehicle {
+    flex: 0 0 250px;
+    
+}
+
+.card-vehicle .imgUnit {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 1em;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.card-vehicle .imgUnit img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-vehicle .vehicle-capacity {
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* End Vehicle */

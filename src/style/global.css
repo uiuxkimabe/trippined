@@ -10,6 +10,7 @@ body {
   font-family: var(--hind);
   text-decoration: none;
   transition: .3s ease-in-out;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -42,4 +43,8 @@ body {
 
 .d-grid {
   display: grid;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
