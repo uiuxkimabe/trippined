@@ -15,17 +15,22 @@ const capacity = document.querySelectorAll('.card .caption .max-pax .capacity')
 const imgSlide = document.querySelectorAll('.card .img-slide')
 
 
-
-console.info(price[0])
-
 class ListVilla {
     villaName;
     priceWd;
     priceWe;
     capacity;
     priceShow(param) {
-        price[param].innerHTML = `${this.priceWd} - ${this.priceWe} / Night`
+        createImgPreview(param)
+        price[param].innerHTML = `${this.priceWd.toLocaleString('id-ID')} - ${this.priceWe.toLocaleString('id-ID')} / Night`
         captionVilla[param].innerHTML = this.villaName
         capacity[param].innerHTML = `Up to ${this.capacity} Pax`
     }
+}
+
+function createImgPreview(paramVilla) {
+    const imgElement = document.createElement('img')
+    imgElement.setAttribute('src', `./src/assets/villa-${paramVilla}/0.jpg`) // Foto pertama diberi nama "0"
+    imgSlide[paramVilla].appendChild(imgElement)
+    return 
 }

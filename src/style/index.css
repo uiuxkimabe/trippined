@@ -49,7 +49,20 @@ nav .menu.show {
 
 /* End nav */
 
-/* Hero */
+/* Jumbotron */
+
+#jumbotron {
+    height: 300px;
+    text-align: center;
+}
+
+#jumbotron .container {
+    justify-content: center;
+}
+
+/* End Jumbotron */
+
+/* List Villa */
 
 #villas {
     padding: 1em 0;
@@ -84,7 +97,7 @@ nav .menu.show {
 
 .card .img-slide img {
     width: 100%;
-    height: 100px;
+    height: 100%;
 }
 
 #villas .card .caption {
@@ -107,4 +120,4 @@ nav .menu.show {
     color: #5c5c5c;
 }
 
-/* End Hero */
+/* End List Villa */
